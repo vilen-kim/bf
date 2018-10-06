@@ -2,6 +2,8 @@
 	use yii\helpers\Html;
 ?>
 
+
+
 <div id="main">
 	<div class="container">
 		<div style="position: absolute; top: 490px; left: 520px; font-size: 46px; color: #222">
@@ -9,6 +11,8 @@
 		</div>
 	</div>
 </div>
+
+
 
 <div id="why">
 	<div class="container">
@@ -52,5 +56,74 @@
 			</div>
 		</div>
 			
+	</div>
+</div>
+
+
+
+<div id="stages" style="margin-top: 80px">
+	<div class="container">
+		<h1>Мы оказываем услуги на любом этапе</h1>
+		
+		<div class="col-md-12 row">
+			<div class="col-md-1 col-md-offset-1">
+				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
+			</div>
+			<div class="col-md-4">
+				<h3>1. Консультирование</h3>
+			</div>
+			<div class="col-md-1">
+				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
+			</div>
+			<div class="col-md-4">
+				<h3>5. Досудебное урегулирование споров</h3>
+			</div>
+		</div>
+
+		<div class="col-md-12 row" style="margin-top: 60px">
+			<div class="col-md-1 col-md-offset-1">
+				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
+			</div>
+			<div class="col-md-4">
+				<h3>2. Подготовка претензий</h3>
+			</div>
+			<div class="col-md-1">
+				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
+			</div>
+			<div class="col-md-4">
+				<h3>6. Представление интересов клиента в суде</h3>
+			</div>
+		</div>
+
+		<div class="col-md-12 row" style="margin-top: 60px">
+			<div class="col-md-1 col-md-offset-1">
+				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
+			</div>
+			<div class="col-md-4">
+				<h3>3. Подготовка процессуальных и иных документов</h3>
+			</div>
+			<div class="col-md-1">
+				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
+			</div>
+			<div class="col-md-4">
+				<h3>7. Регистрационные действия</h3>
+			</div>
+		</div>
+
+		<div class="col-md-12 row" style="margin-top: 60px">
+			<div class="col-md-1 col-md-offset-1">
+				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
+			</div>
+			<div class="col-md-4">
+				<h3>4. Формулировка правовой позиции по делу</h3>
+			</div>
+			<div class="col-md-1">
+				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
+			</div>
+			<div class="col-md-4">
+				<h3>8. Сопровождение исполнительного производства</h3>
+			</div>
+		</div>
+		
 	</div>
 </div>
