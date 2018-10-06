@@ -1,0 +1,50 @@
+#stages {
+	background-image: url("/images/stages.jpg");
+	background-size: cover; 
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#stages .row .col-sm-1 img {
+	width: 100%;
+}
+
+
+
+/* Для телефонов */
+@media (max-width: 767px){
+	#stages .row .col-sm-1 img {
+		max-width: 40px;
+		margin-left: 15px;
+	}
+	
+	#stages .row .col-sm-4 {
+		padding-top: 8px;
+	}
+	
+	#stages .col-xs-10 {
+		margin-bottom: 20px;
+	}
+}
+
+/* Для планшетов */
+@media (max-width: 767px) and (orientation: landscape) {
+	#stages .row .col-sm-1 img {
+		margin-left: 45px;
+	}
+	
+	#stages .row .col-sm-4 {
+		padding-top: 13px;
+	}
+}
+
+/* Для компьютеров */
+@media (min-width: 768px){
+	#stages .row {
+		margin-bottom: 40px;
+	}
+	
+	#stages .row .col-sm-4 {
+		padding-top: 20px;
+	}
+}

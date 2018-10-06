@@ -13,6 +13,7 @@
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"> 
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,49 +27,28 @@
 
 <header>
     <div class="container">
-    <?php
-        $img = Html::img('@web/images/logo.png', [
-            'height' => '100%',
-            'class' => 'pull-left',
-        ]);
-        $text1 = Html::tag('div', 'BONA FIDES', [
-            'style' => [
-                'font-size'      => '14px',
-                'color'          => 'white',
-                'font-weight'    => 'bold',
-                'letter-spacing' => '3px',               
-            ]
-        ]);
-        $text2 = Html::tag('div', 'ЮРИДИЧЕСКАЯ КОМПАНИЯ', [
-            'style' => [
-                'font-size'   => '8px',
-                'color'       => 'white',
-                'margin-top'  => '-6px',
-            ]
-        ]);
-        $divText = Html::tag('div', $text1 . $text2, ['style' => 'padding-top: 8px; text-align: center; width: 163px']);
-        NavBar::begin([
-            'brandLabel' => $img . $divText,
-            'brandUrl' => Yii::$app->homeUrl,
-            'brandOptions' => ['style' => 'width: 200px; padding: 5px'],
-            'options' => [
-                'class' => 'navbar-inverse navbar-fixed-top',
-            ],
-        ]);
-        echo Nav::widget([
-            'options' => ['class' => 'navbar-nav navbar-right'],
-            'items' => [
-                ['label' => 'Главная', 'url' => '#main'],
-                ['label' => 'Почему мы?', 'url' => '#why'],
-                ['label' => 'Этапы', 'url' => '#stages'],
-                ['label' => 'О нас', 'url' => '#about'],
-                ['label' => 'Практика', 'url' => '#practice'],
-                ['label' => 'Записаться', 'url' => '#signup'],
-                ['label' => 'Об организации', 'url' => '#organization'],
-            ],
-        ]);
-        NavBar::end();
-    ?>
+        <?php
+            NavBar::begin([
+                'brandLabel' => Html::img('@web/images/logo.png', ['height' => '40px']),
+                'brandUrl' => ['site/index'],
+                'options' => [
+                    'class' => 'navbar-default navbar-fixed-top',
+                ],
+            ]);
+            echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => [
+                    ['label' => 'Главная', 'url' => '#main'],
+                    ['label' => 'Почему мы?', 'url' => '#why'],
+                    ['label' => 'Этапы', 'url' => '#stages'],
+                    ['label' => 'О нас', 'url' => '#about'],
+                    ['label' => 'Практика', 'url' => '#practice'],
+                    ['label' => 'Записаться', 'url' => '#signup'],
+                    ['label' => 'Об организации', 'url' => '#organization'],
+                ],
+            ]);
+            NavBar::end();
+        ?>
     </div>
 </header>
 
@@ -76,11 +56,11 @@
     <?= $content ?>
 </div>
 
-<footer>
+<!-- <footer>
     <div class="container">
 
     </div>
-</footer>
+</footer> -->
 
 <?php $this->endBody() ?>
 </body>

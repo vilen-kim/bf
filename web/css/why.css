@@ -1,0 +1,28 @@
+/* Для телефонов */
+@media (max-width: 767px){
+	#why .row .col-sm-1 img {
+		width: 100%;
+		max-width: 40px;
+		margin-left: 15px;
+	}
+	#why .col-xs-12 {
+		margin-bottom: 40px;
+	}
+}
+
+/* Для планшетов */
+@media (max-width: 767px) and (orientation: landscape) {
+	#why .row .col-sm-1 img {
+		margin-left: 45px;
+	}
+}
+
+/* Для компьютеров */
+@media (min-width: 768px){
+	#why .row .col-sm-1 img {
+		width: 100%;
+	}
+	#why .col-xs-12 {
+		margin-bottom: 40px;
+	}
+}

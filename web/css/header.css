@@ -1,0 +1,16 @@
+nav.navbar-default {
+	background: none;
+	border: 0;
+}
+a.navbar-brand {
+	padding: 3px;
+}
+ul.navbar-nav a {
+	color: black !important;
+}
+ul.navbar-nav li {
+	padding: 0;
+}
+ul.navbar-nav a:hover, ul.navbar-nav a:focus {
+	border-bottom: 1px solid black;
+}
