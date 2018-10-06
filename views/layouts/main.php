@@ -43,7 +43,6 @@
             'style' => [
                 'font-size'   => '8px',
                 'color'       => 'white',
-                'font-weight' => 'bold',
                 'margin-top'  => '-6px',
             ]
         ]);
