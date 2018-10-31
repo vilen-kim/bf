@@ -13,7 +13,6 @@ $config = [
     ],
     'components' => [
         'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => md5('qweasdzxc'),
         ],
         'cache' => [
@@ -27,12 +26,21 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'class' => yii\swiftmailer\Mailer::class,
+            'transport' => [
+                'class' => Swift_SmtpTransport::class,
+                'host' => 'cpanel10.d.fozzy.com',
+                'username' => 'requests@bonafides86.ru',
+                'password' => 'JgC?xw*BYcvy',
+                'port' => '465',
+                'encryption' => 'ssl',
+            ],
+            'messageConfig' => [
+               'from' => 'requests@bonafides86.ru',
+               'to' => 'requests@bonafides86.ru',
+            ],
         ],
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -43,6 +51,12 @@ $config = [
             ],
         ],
         'db' => $db,
+        'reCaptcha' => [
+            'name' => 'reCaptcha',
+            'class' => 'himiklab\yii2\recaptcha\ReCaptcha',
+            'siteKey' => '6Lf_HXUUAAAAAP7P2ZHU3pY8-QHk5aMCSXb6Z6l8',
+            'secret' => '6Lf_HXUUAAAAAOoOiW71FyTlLL7CwSmv-Zm7ZpNt',
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

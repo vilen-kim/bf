@@ -1,0 +1,43 @@
+#main {
+	background-image: url("/images/main.jpg");
+	background-size: cover; 
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+#main .caption {
+	position: absolute;
+	width: 100%;
+	top: 20%;
+	text-align: center;
+	font-size: 3em;
+	font-weight: bold;
+	color: black;
+	text-shadow: 2px 2px 4px #333;
+}
+
+#main .description {
+	position: absolute;
+	bottom: 40%;
+	width: 100%;
+	text-align: center;
+	font-size: 1em;
+	color: #333;
+	padding: 10px;
+}
+
+/* Для мониторов */
+@media (min-width: 992px) {
+	#main .caption {
+		font-size: 5em;
+	}
+
+	#main .description {
+		font-size: 2em;
+		left: 50%;
+		width: 50%;
+		text-align: left;
+		bottom: 30%;
+	}
+}

@@ -1,129 +1,21 @@
 <?php
 	use yii\helpers\Html;
+
+	echo $this->render('../modals/sokov.php');
+	echo $this->render('../modals/kuzmenko.php');
+
+	echo $this->render('../modals/notWork.php');
+	echo $this->render('../modals/buyAuto.php');
+	echo $this->render('../modals/osagoMoney.php');
+	echo $this->render('../modals/tourBankruptcy.php');
+	echo $this->render('../modals/landScape.php');
+	echo $this->render('../modals/trainLate.php');
+	echo $this->render('../modals/badHouse.php');
+
+	echo $this->render('./1main.php');
+	echo $this->render('./2why.php');
+	echo $this->render('./3stages.php');
+	echo $this->render('./4about.php');
+	echo $this->render('./5practics.php');
+	echo $this->render('./6signup.php', ['model' => $model]);
 ?>
-
-
-
-<div id="main">
-	<div class="container">
-		<div style="position: absolute; top: 490px; left: 520px; font-size: 46px; color: #222">
-			Оказание юридических услуг
-		</div>
-	</div>
-</div>
-
-
-
-<div id="why">
-	<div class="container">
-		<h1>Почему мы?</h1>
-		
-		<div class="col-md-12 row">
-			<div class="col-md-1 col-md-offset-1">
-				<?= Html::img('@web/images/why1.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>Индивидуальный подход к каждому клиенту</h3>
-				Наше сотрудничество с клиентом строится с учетом всех его пожеланий.
-			</div>
-			<div class="col-md-1">
-				<?= Html::img('@web/images/why2.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>Профессионализм в процессе оказания услуг</h3>
-				Наши юристы имеют высшее юридическое образование и обладают самой высокой квалификацией.
-			</div>
-		</div>
-
-		<div class="col-md-12 row" style="margin-top: 60px">
-			<div class="col-md-1 col-md-offset-1">
-				<?= Html::img('@web/images/why3.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>Демократичные цены</h3>
-				Наши услуги доступны каждому, в чем вы можете убедиться сами.<br>
-				<?php
-					$pdf = Html::img('@web/images/pdf.svg', ['height' => 20]);
-					echo Html::a($pdf . ' Прайс-лист от 30.09.2018', '@web/files/Price.pdf');
-				?>
-			</div>
-			<div class="col-md-1">
-				<?= Html::img('@web/images/why4.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>Лояльное отношение к клиенту</h3>
-				Независимо от условий, ваших финансовых возможностей или специфики вашего случая, вы в любом случае можете рассчитывать на понимание и готовность пойти навстречу с нашей стороны.
-			</div>
-		</div>
-			
-	</div>
-</div>
-
-
-
-<div id="stages" style="margin-top: 80px">
-	<div class="container">
-		<h1>Мы оказываем услуги на любом этапе</h1>
-		
-		<div class="col-md-12 row">
-			<div class="col-md-1 col-md-offset-1">
-				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>1. Консультирование</h3>
-			</div>
-			<div class="col-md-1">
-				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>5. Досудебное урегулирование споров</h3>
-			</div>
-		</div>
-
-		<div class="col-md-12 row" style="margin-top: 60px">
-			<div class="col-md-1 col-md-offset-1">
-				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>2. Подготовка претензий</h3>
-			</div>
-			<div class="col-md-1">
-				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>6. Представление интересов клиента в суде</h3>
-			</div>
-		</div>
-
-		<div class="col-md-12 row" style="margin-top: 60px">
-			<div class="col-md-1 col-md-offset-1">
-				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>3. Подготовка процессуальных и иных документов</h3>
-			</div>
-			<div class="col-md-1">
-				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>7. Регистрационные действия</h3>
-			</div>
-		</div>
-
-		<div class="col-md-12 row" style="margin-top: 60px">
-			<div class="col-md-1 col-md-offset-1">
-				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>4. Формулировка правовой позиции по делу</h3>
-			</div>
-			<div class="col-md-1">
-				<?= Html::img('@web/images/stage.svg', ['width' => '100%']) ?>
-			</div>
-			<div class="col-md-4">
-				<h3>8. Сопровождение исполнительного производства</h3>
-			</div>
-		</div>
-		
-	</div>
-</div>

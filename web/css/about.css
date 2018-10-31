@@ -1,0 +1,35 @@
+div.modal {
+	color: #333;
+}
+
+div.modal div.modal-content {
+	background: rgba(255, 255, 255, 0.85);
+}
+
+div.modal h2, div.modal h3 {
+	color: black;
+	font-weight: bold;
+	margin: 0;
+}
+
+
+
+/* Для телефонов */
+@media (max-width: 767px){
+	#about .row .col-sm-4 {
+		margin-bottom: 40px;
+	}
+}
+
+/* Для планшетов */
+@media (max-width: 767px) and (orientation: landscape) {
+	#about .row .col-sm-4 {
+		margin-bottom: 40px;
+	}
+
+	#about .row .col-sm-4 img {
+		max-width: 200px;
+		display: block;
+		margin: 0 auto;
+	}
+}

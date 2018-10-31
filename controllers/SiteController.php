@@ -7,8 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
+use app\models\SignupForm;
 
 class SiteController extends Controller
 {
@@ -52,6 +51,13 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new SignupForm;
+
+        $post = Yii::$app->request->post();
+        if ($model->load($post)){
+            $model->sendEmail();
+        }
+
+        return $this->render('index', ['model' => $model]);
     }
 }
