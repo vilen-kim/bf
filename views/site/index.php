@@ -3,6 +3,7 @@
 
 	echo $this->render('../modals/sokov.php');
 	echo $this->render('../modals/kuzmenko.php');
+	echo $this->render('../modals/buyAuto.php');
 
 	echo $this->render('./1main.php');
 	echo $this->render('./2why.php');
