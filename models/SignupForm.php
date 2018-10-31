@@ -10,6 +10,7 @@ class SignupForm extends Model
     public $name;
     public $phone;
     public $email;
+    public $reCaptcha;
 
 
 
@@ -18,6 +19,7 @@ class SignupForm extends Model
         return [
             [['name', 'phone'], 'required', 'message' => 'Это обязательное поле'],
             ['email', 'email'],
+            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className()]
         ];
     }
 

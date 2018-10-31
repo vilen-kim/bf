@@ -51,6 +51,12 @@ $config = [
             ],
         ],
         'db' => $db,
+        'reCaptcha' => [
+            'name' => 'reCaptcha',
+            'class' => 'himiklab\yii2\recaptcha\ReCaptcha',
+            'siteKey' => '6Lf_HXUUAAAAAP7P2ZHU3pY8-QHk5aMCSXb6Z6l8',
+            'secret' => '6Lf_HXUUAAAAAOoOiW71FyTlLL7CwSmv-Zm7ZpNt',
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

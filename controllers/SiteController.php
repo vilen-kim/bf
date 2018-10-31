@@ -55,20 +55,7 @@ class SiteController extends Controller
 
         $post = Yii::$app->request->post();
         if ($model->load($post)){
-            if (isset($post['g-recaptcha-response'])) {
-                $secretKey = Yii::$app->params['secret_key'];
-                $response = $post['g-recaptcha-response'];
-                $remoteIp = Yii::$app->request->userIP;
-                $reCaptchaValidationUrl = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$response&remoteip=$remoteIp");
-                $result = json_decode($reCaptchaValidationUrl, TRUE);
-                
-                print_r($result);
-                // if($result['success'] == 1) {
-                //     $userMessage = '<div>Success: you\'ve made it :)</div>';
-                // } else {
-                //     $userMessage = '<div>Fail: please try again :(</div>';
-                // }
-            }
+            $model->sendEmail();
         }
 
         return $this->render('index', ['model' => $model]);

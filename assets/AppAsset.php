@@ -21,7 +21,6 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/css3-animate-it.js',
-        'js/signup.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

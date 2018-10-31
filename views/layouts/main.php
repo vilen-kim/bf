@@ -13,7 +13,6 @@
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"> 
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,9 +41,9 @@
                     ['label' => 'Почему мы?', 'url' => '#why'],
                     ['label' => 'Этапы', 'url' => '#stages'],
                     ['label' => 'О нас', 'url' => '#about'],
-                    ['label' => 'Практика', 'url' => '#practice'],
+                    ['label' => 'Наша практика', 'url' => '#practice'],
                     ['label' => 'Записаться', 'url' => '#signup'],
-                    ['label' => 'Об организации', 'url' => '#organization'],
+                    //['label' => 'Об организации', 'url' => '#organization'],
                 ],
             ]);
             NavBar::end();

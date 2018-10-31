@@ -4,7 +4,7 @@
 	use yii\web\View;
 ?>
 
-<div id="signup">
+<div id="signup" style="padding-bottom: 60px">
 	<div class="container">
 		<h1>Записаться на консультацию</h1>
 
@@ -22,13 +22,12 @@
 			    echo $form->field($model, 'email')
 			    	->textInput(['placeholder' => 'Электронная почта'])
 			    	->label(false);
+			    echo $form->field($model, 'reCaptcha')
+			    	->widget(\himiklab\yii2\recaptcha\ReCaptcha::className(), ['theme' => 'dark'])
+			    	->label(false);
 			    
 			    echo Html::beginTag('div', ['align' => 'center']);
-			        echo Html::submitButton('Записаться', [
-			        	'class' => 'btn btn-primary g-recaptcha',
-			    		'data-sitekey' => Yii::$app->params['site_key'],
-			    		'data-callback' => 'onSubmitRecaptcha',
-			        ]);
+			        echo Html::submitButton('Записаться');
 			    echo Html::endTag('div');
 			ActiveForm::end();
 		?>
