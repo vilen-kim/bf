@@ -1,6 +1,8 @@
 <?php
 	use yii\helpers\Html;
 
+	$this->title = "Bona Fides";
+
 	echo $this->render('../modals/sokov.php');
 	echo $this->render('../modals/kuzmenko.php');
 
