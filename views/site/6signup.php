@@ -4,7 +4,7 @@
 	use yii\web\View;
 ?>
 
-<div id="signup" style="padding-bottom: 60px">
+<div id="signup" style="padding-bottom: 80px">
 	<div class="container">
 		<h1>Записаться на консультацию</h1>
 

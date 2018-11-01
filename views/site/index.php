@@ -20,4 +20,5 @@
 	echo $this->render('./4about.php');
 	echo $this->render('./5practics.php');
 	echo $this->render('./6signup.php', ['model' => $model]);
+	echo $this->render('./7organization.php');
 ?>

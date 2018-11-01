@@ -43,7 +43,7 @@
                     ['label' => 'О нас', 'url' => '#about'],
                     ['label' => 'Наша практика', 'url' => '#practice'],
                     ['label' => 'Записаться', 'url' => '#signup'],
-                    //['label' => 'Об организации', 'url' => '#organization'],
+                    ['label' => 'Об организации', 'url' => '#organization'],
                 ],
             ]);
             NavBar::end();
@@ -55,11 +55,12 @@
     <?= $content ?>
 </div>
 
-<!-- <footer>
+<footer>
     <div class="container">
-
+        <div class="col-sm-4">Общество с ограниченной ответственностью<br>"Юридическая компания БОНА ФИДЕС"</div>
+        <div class="col-sm-2 col-sm-offset-6">Телефоны:<br>8 (34672) 7-06-02<br>8-929-292-26-22</div>
     </div>
-</footer> -->
+</footer>
 
 <?php $this->endBody() ?>
 </body>
