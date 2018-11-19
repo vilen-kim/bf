@@ -8,7 +8,7 @@
 	<div class="container">
 		<h1>Об организации</h1>
 
-		<h3 align="center">Мы находимся по адресу: Ханты-Мансийский автономный округ - Югра, г. Нягань, 2 мкр, дом 4А.</h3>
+		<h3>Мы находимся по адресу: Ханты-Мансийский автономный округ - Югра, г. Нягань, 2 мкр, дом 4А (здание Отель Югра86):</h3>
 
 		<div align="center">
 			<iframe
@@ -18,6 +18,7 @@
 				frameborder="0"
 				allowfullscreen="true"
 			></iframe>
+			<?= Html::img('/images/where.jpg', ['width' => '50%', 'style' => 'margin-top: 20px']) ?>
 		</div>
 	</div>
 </div>

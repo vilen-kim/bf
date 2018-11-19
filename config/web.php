@@ -2,6 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$url = require __DIR__ . '/url.php';
 
 $config = [
     'id' => 'basic',
@@ -40,7 +41,6 @@ $config = [
                'to' => 'requests@bonafides86.ru',
             ],
         ],
-
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -57,14 +57,8 @@ $config = [
             'siteKey' => '6Lf_HXUUAAAAAP7P2ZHU3pY8-QHk5aMCSXb6Z6l8',
             'secret' => '6Lf_HXUUAAAAAOoOiW71FyTlLL7CwSmv-Zm7ZpNt',
         ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
+        'baseUrl' => '',
+        'urlManager' => $url,
     ],
     'params' => $params,
 ];

@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\SignupForm;
+use app\models\LoginForm;
 
 class SiteController extends Controller
 {
@@ -33,7 +34,6 @@ class SiteController extends Controller
     }
 
 
-
     public function actions()
     {
         return [
@@ -48,16 +48,25 @@ class SiteController extends Controller
     }
 
 
-
     public function actionIndex()
     {
         $model = new SignupForm;
-
         $post = Yii::$app->request->post();
         if ($model->load($post)){
             $model->sendEmail();
         }
-
         return $this->render('index', ['model' => $model]);
+    }
+
+
+    public function actionLogin()
+    {
+        $model = new LoginForm;
+        if ($model->load(Yii::$app->request->post())){
+            if ($model->password == Yii::$app->params['password']){
+                return $this->redirect('admin')
+            }
+        }
+        return $this->render('login', ['model' => $model]);
     }
 }
