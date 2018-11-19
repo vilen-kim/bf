@@ -14,9 +14,8 @@
 		<?php
 			$form = ActiveForm::begin(['id' => 'loginForm']);
 			    echo $form->field($model, 'password')
-			    	->textInput(['placeholder' => 'Введите пароль'])
+			    	->passwordInput(['placeholder' => 'Введите пароль'])
 			    	->label(false);
-			    
 			    echo Html::beginTag('div', ['align' => 'center']);
 			        echo Html::submitButton('Войти');
 			    echo Html::endTag('div');

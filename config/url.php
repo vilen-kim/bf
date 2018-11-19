@@ -5,7 +5,9 @@ return [
     'showScriptName' => false,
     'rules' => [
         '' => 'site/index',
+        'admin' => 'site/admin',
         'login' => 'site/login',
         'logout' => 'site/logout',
+        'add' => 'site/add-article',
     ],
 ];

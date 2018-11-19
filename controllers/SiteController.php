@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\SignupForm;
 use app\models\LoginForm;
+use app\models\User;
+use app\models\Articles;
 
 class SiteController extends Controller
 {
@@ -17,12 +19,17 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => ['?'],
+                        'actions' => ['index', 'login'],
+                        'roles' => ['?', '@'],
                     ],
+                    [
+                        'allow' => true,
+                        'actions' => ['admin', 'logout', 'add-article'],
+                        'roles' => ['@'],
+                    ]
                 ],
             ],
             'verbs' => [
@@ -59,14 +66,40 @@ class SiteController extends Controller
     }
 
 
+    public function actionAdmin()
+    {
+        $model = Articles::find()->select(['caption', 'image'])->all();
+        return $this->render('admin', ['model' => $model]);
+    }
+
+
+    public function actionAddArticle()
+    {
+        $model = new Articles;
+        return $this->render('addArticle', ['model' => $model]);
+    }
+
+
     public function actionLogin()
     {
         $model = new LoginForm;
         if ($model->load(Yii::$app->request->post())){
-            if ($model->password == Yii::$app->params['password']){
-                return $this->redirect('admin')
+            $user = User::findByUsername('admin');
+            $hash = Yii::$app->security->generatePasswordHash(Yii::$app->params['password']);
+            if (Yii::$app->security->validatePassword($model->password, $hash)){
+                Yii::$app->user->login($user);
+                return $this->redirect('admin');
+            } else {
+                echo 'Неверный пароль';
             }
         }
         return $this->render('login', ['model' => $model]);
+    }
+
+
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+        return $this->redirect(['site/index']);
     }
 }
