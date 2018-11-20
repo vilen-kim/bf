@@ -14,7 +14,18 @@
 		
 		<h1>Администрирование статей</h1>
 
-		<?= Html::a('Добавить статью', ['site/add-article'], ['class' => 'btn btn-success']) ?>
+		<?= Html::a('Добавить статью', ['site/article'], ['class' => 'btn btn-success']) ?>
+
+		<div style="margin-top: 40px">
+			<ol>
+				<?php
+					foreach($model as $article) {
+						$url = Html::a($article->caption, ['site/article', 'id' => $article->id]);
+						echo Html::tag('li', $url);
+					}
+				?>
+			</ol>
+		</div>
 
 	</div>
 </div>

@@ -11,6 +11,7 @@ use app\models\SignupForm;
 use app\models\LoginForm;
 use app\models\User;
 use app\models\Articles;
+use app\models\ArticleForm;
 use yii\web\UploadedFile;
 
 class SiteController extends Controller
@@ -28,7 +29,7 @@ class SiteController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['admin', 'logout', 'add-article', 'image-upload'],
+                        'actions' => ['admin', 'logout', 'article', 'delete'],
                         'roles' => ['@'],
                     ]
                 ],
@@ -69,25 +70,50 @@ class SiteController extends Controller
 
     public function actionAdmin()
     {
-        $model = Articles::find()->select(['caption', 'image'])->all();
+        $model = Articles::find()->select(['id', 'caption'])->all();
         return $this->render('admin', ['model' => $model]);
     }
 
 
-    public function actionAddArticle()
+    public function actionArticle($id=null)
     {
-        $model = new Articles;
-        return $this->render('addArticle', ['model' => $model]);
+        $model = new ArticleForm;
+        if (Yii::$app->request->isPost){
+            $model->load(Yii::$app->request->post());
+            $model->image = UploadedFile::getInstanceByName('img');
+            if ($model->validate()){
+                $file = $model->image;
+                if ($file->saveAs('images/articles/' . $file->name)){
+                    $article = ($id) ? Articles::findOne(['id' => $id]) : new Articles;
+                    $article->caption = $model->caption;
+                    $article->image = '/images/articles/' . $file->name;
+                    $article->text = $model->text;
+                    if ($article->save()){
+                        return $this->redirect(['site/admin']);
+                    }
+                }
+            }
+        }
+        if ($id){
+            $article = Articles::findOne(['id' => $id]);
+            if ($article){
+                $model->caption = $article->caption;
+                $model->text = $article->text;
+                $model->imagePath = $article->image;
+            } else {
+                $id = null;
+            }
+        }
+        return $this->render('article', ['model' => $model, 'id' => $id]);
     }
 
 
-    public function actionImageUpload()
+    public function actionDelete($id)
     {
-        $file = UploadedFile::getInstanceByName('img');
-        if ($file->saveAs('images/articles/' . $file->name)){
-            return '/images/articles/' . $file->name;
-        }
-
+        $model = Articles::findOne(['id' => $id]);
+        if ($model)
+            $model->delete();
+        return $this->redirect(['site/admin']);
     }
 
 
