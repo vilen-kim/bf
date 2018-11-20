@@ -13,7 +13,8 @@
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"> 
+    <div><img src="https://mc.yandex.ru/watch/51230620" style="position:absolute; left:-9999px;" alt="" /></div>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,7 +59,10 @@
 <footer>
     <div class="container">
         <div class="col-sm-4">Общество с ограниченной ответственностью<br>"Юридическая компания БОНА ФИДЕС"</div>
-        <div class="col-sm-2 col-sm-offset-6">Телефоны:<br>8 (34672) 7-06-02<br>8-929-292-26-22</div>
+        <div class="col-sm-2 col-sm-offset-4">Телефоны:<br>8 (34672) 7-06-02<br>8-929-292-26-22</div>
+        <div class="col-sm-2"><a href="https://metrika.yandex.ru/stat/?id=51230620&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/51230620/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="51230620" data-lang="ru" /></a></div>
     </div>
 </footer>
 
