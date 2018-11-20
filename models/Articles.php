@@ -28,7 +28,8 @@ class Articles extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['caption', 'text', 'image'], 'required', 'message' => 'Это обязательное поле'],
+            [['caption', 'text'], 'required', 'message' => 'Это обязательное поле'],
+            ['image', 'required', 'message' => 'Изображение надо загрузить на сервер'],
             [['text'], 'string'],
             [['caption', 'image'], 'string', 'max' => 255],
         ];

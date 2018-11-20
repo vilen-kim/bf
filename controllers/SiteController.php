@@ -11,6 +11,7 @@ use app\models\SignupForm;
 use app\models\LoginForm;
 use app\models\User;
 use app\models\Articles;
+use yii\web\UploadedFile;
 
 class SiteController extends Controller
 {
@@ -27,7 +28,7 @@ class SiteController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['admin', 'logout', 'add-article'],
+                        'actions' => ['admin', 'logout', 'add-article', 'image-upload'],
                         'roles' => ['@'],
                     ]
                 ],
@@ -77,6 +78,16 @@ class SiteController extends Controller
     {
         $model = new Articles;
         return $this->render('addArticle', ['model' => $model]);
+    }
+
+
+    public function actionImageUpload()
+    {
+        $file = UploadedFile::getInstanceByName('img');
+        if ($file->saveAs('images/articles/' . $file->name)){
+            return '/images/articles/' . $file->name;
+        }
+
     }
 
 

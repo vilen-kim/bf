@@ -9,5 +9,6 @@ return [
         'login' => 'site/login',
         'logout' => 'site/logout',
         'add' => 'site/add-article',
+        'imageUpload' => 'site/image-upload',
     ],
 ];

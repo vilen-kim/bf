@@ -8,8 +8,13 @@ class AdminAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/admin.css',
+        'css/fileinput.min.css',
     ];
     public $js = [
+        'js/fileinput.min.js',
+        'js/piexif.min.js',
+        'js/purify.min.js',
+        'js/sortable.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
