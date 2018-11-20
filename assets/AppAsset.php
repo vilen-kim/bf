@@ -18,6 +18,7 @@ class AppAsset extends AssetBundle
         'css/practics.css',
         'css/signup.css',
         'css/animations.css',
+        'css/show.css',
     ];
     public $js = [
         'js/css3-animate-it.js',

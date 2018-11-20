@@ -9,7 +9,7 @@
 	AdminAsset::register($this);
 ?>
 
-<div id="admin">
+<div id="admin" style="padding-bottom: 40px">
 	<div class="container">
 		<div class="pull-right">
 			<?= Html::a('Выход', ['site/logout']) ?>
@@ -49,13 +49,15 @@
 							'showUpload' => false,
 							'showRemove' => false,
 							'showCancel' => false,
+							'initialPreview' => [$model->imagePath],
+							'initialPreviewAsData' => true,
 				    	],
-					]);
+					])->label('Изображение');
 				
 				echo $form->field($model, 'text')
 					->widget(CKEditor::className(), [
 						'options' => ['rows' => 6],
-						'preset' => 'basic'
+						'preset' => 'standart'
 				])->label('Содержание');
 				
 				echo Html::beginTag('div', ['align' => 'center']);

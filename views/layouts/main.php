@@ -37,13 +37,13 @@
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Главная', 'url' => '#main'],
-                    ['label' => 'Почему мы?', 'url' => '#why'],
-                    ['label' => 'Этапы', 'url' => '#stages'],
-                    ['label' => 'О нас', 'url' => '#about'],
-                    ['label' => 'Наша практика', 'url' => '#practice'],
-                    ['label' => 'Записаться', 'url' => '#signup'],
-                    ['label' => 'Об организации', 'url' => '#organization'],
+                    ['label' => 'Главная', 'url' => ['site/index', '#' => 'main']],
+                    ['label' => 'Почему мы?', 'url' => ['site/index', '#' => 'why']],
+                    ['label' => 'Этапы', 'url' => ['site/index', '#' => 'stages']],
+                    ['label' => 'О нас', 'url' => ['site/index', '#' => 'about']],
+                    ['label' => 'Наша практика', 'url' => ['site/index', '#' => 'practice']],
+                    ['label' => 'Записаться', 'url' => ['site/index', '#' => 'signup']],
+                    ['label' => 'Об организации', 'url' => ['site/index', '#' => 'organization']],
                 ],
             ]);
             NavBar::end();

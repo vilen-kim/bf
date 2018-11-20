@@ -10,5 +10,6 @@ return [
         'logout' => 'site/logout',
         'add' => 'site/add-article',
         'article' => 'site/article',
+        'show' => 'site/show',
     ],
 ];

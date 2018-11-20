@@ -13,6 +13,7 @@ use app\models\User;
 use app\models\Articles;
 use app\models\ArticleForm;
 use yii\web\UploadedFile;
+use yii\imagine\Image;
 
 class SiteController extends Controller
 {
@@ -24,7 +25,7 @@ class SiteController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'login'],
+                        'actions' => ['index', 'login', 'show'],
                         'roles' => ['?', '@'],
                     ],
                     [
@@ -60,11 +61,15 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $model = new SignupForm;
+        $articles = Articles::find()->select(['id', 'caption', 'image'])->all();
         $post = Yii::$app->request->post();
         if ($model->load($post)){
             $model->sendEmail();
         }
-        return $this->render('index', ['model' => $model]);
+        return $this->render('index', [
+            'model' => $model,
+            'articles' => $articles,
+        ]);
     }
 
 
@@ -80,18 +85,19 @@ class SiteController extends Controller
         $model = new ArticleForm;
         if (Yii::$app->request->isPost){
             $model->load(Yii::$app->request->post());
+            $article = ($id) ? Articles::findOne(['id' => $id]) : new Articles;
+            $article->caption = $model->caption;
+            $article->text = $model->text;
             $model->image = UploadedFile::getInstanceByName('img');
-            if ($model->validate()){
+            if ($model->image){
                 $file = $model->image;
-                if ($file->saveAs('images/articles/' . $file->name)){
-                    $article = ($id) ? Articles::findOne(['id' => $id]) : new Articles;
-                    $article->caption = $model->caption;
-                    $article->image = '/images/articles/' . $file->name;
-                    $article->text = $model->text;
-                    if ($article->save()){
-                        return $this->redirect(['site/admin']);
-                    }
-                }
+                $filename = 'images/articles/' . $file->name;
+                $file->saveAs($filename);
+                Image::resize($filename, null, 500)->save($filename, ['quality' => 100]);
+                $article->image = $filename;
+            }
+            if ($article->save()){
+                return $this->redirect(['site/admin']);
             }
         }
         if ($id){
@@ -100,11 +106,19 @@ class SiteController extends Controller
                 $model->caption = $article->caption;
                 $model->text = $article->text;
                 $model->imagePath = $article->image;
+                $model->scenario = $model::SCENARIO_UPDATE;
             } else {
                 $id = null;
             }
         }
         return $this->render('article', ['model' => $model, 'id' => $id]);
+    }
+
+
+    public function actionShow($id)
+    {
+        $model = Articles::findOne(['id' => $id]);
+        return $this->render('show', ['model' => $model]);
     }
 
 

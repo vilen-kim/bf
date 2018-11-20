@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45c8eec79015c870a8cb8d64c185b19c",
+    "content-hash": "70d98f436b283049f455c96edefa39ac",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -361,17 +361,75 @@
             "time": "2018-11-08T09:49:58+00:00"
         },
         {
+            "name": "imagine/imagine",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/avalanche123/Imagine.git",
+                "reference": "3bd307b6687b6d62d7e6e00cf7e5caaa091b82b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/3bd307b6687b6d62d7e6e00cf7e5caaa091b82b9",
+                "reference": "3bd307b6687b6d62d7e6e00cf7e5caaa091b82b9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "2.2.*",
+                "symfony/phpunit-bridge": "^3.2 || ^4.0"
+            },
+            "suggest": {
+                "ext-gd": "to use the GD implementation",
+                "ext-gmagick": "to use the Gmagick implementation",
+                "ext-imagick": "to use the Imagick implementation"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Imagine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                }
+            ],
+            "description": "Image processing for PHP 5.3",
+            "homepage": "http://imagine.readthedocs.org/",
+            "keywords": [
+                "drawing",
+                "graphics",
+                "image manipulation",
+                "image processing"
+            ],
+            "time": "2018-11-12T07:44:01+00:00"
+        },
+        {
             "name": "kartik-v/bootstrap-fileinput",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "d0fc759da07da74bbd13f09ae37bd85cc74d8032"
+                "reference": "7845e1c0d1f3a5e7a9efaf6c652ba5bb9e2f8191"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/d0fc759da07da74bbd13f09ae37bd85cc74d8032",
-                "reference": "d0fc759da07da74bbd13f09ae37bd85cc74d8032",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/7845e1c0d1f3a5e7a9efaf6c652ba5bb9e2f8191",
+                "reference": "7845e1c0d1f3a5e7a9efaf6c652ba5bb9e2f8191",
                 "shasum": ""
             },
             "type": "library",
@@ -411,7 +469,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2018-11-05T12:38:12+00:00"
+            "time": "2018-11-20T12:16:24+00:00"
         },
         {
             "name": "kartik-v/yii2-krajee-base",
@@ -834,6 +892,54 @@
                 "yii2"
             ],
             "time": "2018-10-24T12:14:04+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-imagine",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-imagine.git",
+                "reference": "a8a1a068862a86e3395e665bc86e63d5c9b60841"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/a8a1a068862a86e3395e665bc86e63d5c9b60841",
+                "reference": "a8a1a068862a86e3395e665bc86e63d5c9b60841",
+                "shasum": ""
+            },
+            "require": {
+                "imagine/imagine": "~0.6.0 | ~0.7.1",
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\imagine\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Ramirez",
+                    "email": "amigo.cobos@gmail.com"
+                }
+            ],
+            "description": "The Imagine integration for the Yii framework",
+            "keywords": [
+                "helper",
+                "image",
+                "imagine",
+                "yii2"
+            ],
+            "time": "2018-02-22T11:57:06+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -1265,12 +1371,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "82daf83b19d934291d4c2f2a22a4b3e0aacc68dd"
+                "reference": "bd481c854934dbdc83998b63e3329d75ba1b1008"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/82daf83b19d934291d4c2f2a22a4b3e0aacc68dd",
-                "reference": "82daf83b19d934291d4c2f2a22a4b3e0aacc68dd",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/bd481c854934dbdc83998b63e3329d75ba1b1008",
+                "reference": "bd481c854934dbdc83998b63e3329d75ba1b1008",
                 "shasum": ""
             },
             "require": {
@@ -1307,7 +1413,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2018-09-26T15:12:10+00:00"
+            "time": "2018-11-20T16:35:25+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -2831,12 +2937,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "f75de4cb9e4376c09e600a30174fefad9daa2272"
+                "reference": "10997603fb252831e6647dfdb3170e48c1d62499"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/f75de4cb9e4376c09e600a30174fefad9daa2272",
-                "reference": "f75de4cb9e4376c09e600a30174fefad9daa2272",
+                "url": "https://api.github.com/repos/symfony/console/zipball/10997603fb252831e6647dfdb3170e48c1d62499",
+                "reference": "10997603fb252831e6647dfdb3170e48c1d62499",
                 "shasum": ""
             },
             "require": {
@@ -2892,7 +2998,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-15T12:17:10+00:00"
+            "time": "2018-11-20T16:22:05+00:00"
         },
         {
             "name": "symfony/contracts",
@@ -3078,12 +3184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "d39d7a05414c4462abd8c077322b4811549f705c"
+                "reference": "c180d89600a620dbdcaab50ca2fbe299ff1958b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/d39d7a05414c4462abd8c077322b4811549f705c",
-                "reference": "d39d7a05414c4462abd8c077322b4811549f705c",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/c180d89600a620dbdcaab50ca2fbe299ff1958b6",
+                "reference": "c180d89600a620dbdcaab50ca2fbe299ff1958b6",
                 "shasum": ""
             },
             "require": {
@@ -3134,7 +3240,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-11T19:52:12+00:00"
+            "time": "2018-11-20T16:22:05+00:00"
         },
         {
             "name": "symfony/finder",
@@ -3599,7 +3705,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "2amigos/yii2-ckeditor-widget": 20,
-        "kartik-v/yii2-widget-fileinput": 20
+        "kartik-v/yii2-widget-fileinput": 20,
+        "yiisoft/yii2-imagine": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
