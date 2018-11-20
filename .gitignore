@@ -33,3 +33,4 @@ tests/_support/_generated
 /.vagrant
 
 config/params.php
+config/db.php
