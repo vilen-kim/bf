@@ -38,7 +38,7 @@ $config = [
             ],
             'messageConfig' => [
                'from' => 'requests@bonafides86.ru',
-               'to' => 'requests@bonafides86.ru',
+               'to' => 'bona_fides_86@mail.ru',
             ],
         ],
         'log' => [
