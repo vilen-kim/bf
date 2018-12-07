@@ -29,10 +29,13 @@
     <div class="container">
         <?php
             NavBar::begin([
-                'brandLabel' => Html::img('@web/images/logo.png', ['height' => '40px']),
-                'brandUrl' => ['site/index'],
+                'brandLabel' => '8 (34672) 7-06-02',
+                'brandUrl' => null,
                 'options' => [
                     'class' => 'navbar-default navbar-fixed-top',
+                ],
+                'brandOptions' => [
+                    'style' => 'padding-top: 14px',
                 ],
             ]);
             echo Nav::widget([
